@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".SecondActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/sehee_box">
+
+        <Button
+            android:id="@+id/btn_second_back"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/back_square"
+            android:foreground="@drawable/back_ripple" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3.2"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="Hey Sehee,"
+                    android:textColor="@color/white"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.6"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_vertical"
+                    android:text="What will you study today ?"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/logo" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:text="Courses of the day"
+            android:textColor="@color/wolfpack_red"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btn_pca_intro"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_course_on"
+                android:text="Dimensionality\nReduction"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/wolfpack_red"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.15"/>
+
+            <Button
+                android:id="@+id/btn_clustering_intro"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_course_off"
+                android:text="Clustering"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/gray_a80"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_choice"
+            android:layout_width="match_parent"
+            android:layout_height="403dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/pca_choice" />
+
+        <Button
+            android:id="@+id/btn_go_next"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:foreground="@drawable/study_now_ripple"
+            android:stateListAnimator="@null"
+            android:background="@drawable/study_now"
+            android:text="Study Now"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

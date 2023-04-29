@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">DSL</string>
+    <string name="vertical_ellipsis">&#8942;</string>
+    <string name="bullet_point">\u2022</string>
+    <string name="pca_pca">
+        Principal Component Analysis (PCA) is a method for reducing the dimensions of data while keeping most of the information of the data.
+    </string>
+
+    <string name="pca_why">
+        Problems in high-dimensional data analysis:
+        \n\u2022 lengthy computation time
+        \n\u2022 risk of overfitting in modeling
+        \n\u2022 high possibility of intercorrelations among the variables
+    </string>
+
+</resources>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wolfpack_red"
+    tools:context=".PcaResultActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Result"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_pca_result_back"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:foreground="@drawable/back_ripple"
+        android:background="@drawable/top_bar_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_pca_result_next"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:foreground="@drawable/next_ripple"
+        android:background="@drawable/top_bar_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        android:background="@drawable/sv_box">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<!--            #### below is item 111111111111111111111111#################-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"> <!-- first item has no topmargin=10dp -->
+
+                <Button
+                    android:id="@+id/btn_how_to_get_pcs"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/fold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="How to get PCs"
+                    android:textColor="@color/wolfpack_red"
+                    android:fontFamily="sans-serif"
+                    android:textSize="28sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <View
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:alpha="0.5" />
+
+            <LinearLayout
+                android:id="@+id/ll_how_to_get_pcs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:lineSpacingMultiplier="1.05"
+                    android:text="asdasd"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/text_box_rose"
+                    android:fontFamily="sans-serif-light"
+                    android:lineSpacingMultiplier="1.05"
+                    android:text="asdasd"
+                    android:textSize="18sp"
+                    android:padding="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:lineSpacingMultiplier="1.05"
+                    android:text="asdasd"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+<!--            #### below is item 2222222222222222#################-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btn_scree_plot"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/spread" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Scree Plot"
+                    android:textColor="@color/wolfpack_red"
+                    android:fontFamily="sans-serif"
+                    android:textSize="28sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <View
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:alpha="0.5" />
+
+            <LinearLayout
+                android:id="@+id/ll_scree_plot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <edu.ncsu.ise.dsl.RoundedBarChart
+                    android:id="@+id/barChart"
+                    app:radius="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:lineSpacingMultiplier="1.05"
+                    android:text="@string/pca_pca"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+<!--            #### BELOW is item 333333333333333333#################-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btn_pc_time_series"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/spread" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PC Time Series"
+                    android:textColor="@color/wolfpack_red"
+                    android:fontFamily="sans-serif"
+                    android:textSize="28sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <View
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:alpha="0.5"/>
+
+            <LinearLayout
+                android:id="@+id/ll_pc_time_series"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:lineSpacingMultiplier="1.05"
+                    android:text="@string/pca_pca"
+                    android:textSize="18sp" />
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="\n\n\n" />-->
+
+            </LinearLayout>
+
+<!--            #### above is item 3333333333333333#################-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

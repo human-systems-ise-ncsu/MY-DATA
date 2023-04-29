@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wolfpack_red"
+    tools:context=".ClusteringResultActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Result"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_clustering_result_back"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:foreground="@drawable/back_ripple"
+        android:background="@drawable/top_bar_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_clustering_result_next"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:foreground="@drawable/next_ripple"
+        android:background="@drawable/top_bar_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        android:background="@drawable/sv_box">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<!--            #### below is item 111111111111111111111111#################-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"> <!-- first item has no topmargin=10dp -->
+
+                <Button
+                    android:id="@+id/btn_scatter_plot"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/fold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PC Scatter Plot"
+                    android:textColor="@color/wolfpack_red"
+                    android:fontFamily="sans-serif"
+                    android:textSize="28sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <View
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:alpha="0.5"/>
+
+            <LinearLayout
+                android:id="@+id/ll_scatter_plot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.mikephil.charting.charts.ScatterChart
+                    android:id="@+id/scatterChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="\u2022 Confusion Matrix"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <View
+                    android:background="@color/gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.5"/>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:shrinkColumns="*"
+                    android:stretchColumns="*"
+                    android:alpha="0.5">
+
+                    <TableRow> <!-- 0 start -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:gravity="center"
+                            android:text="Class"
+                            android:textColor="#000000"
+                            android:layout_weight="1.22"/>
+                        <TextView
+                            android:gravity="center"
+                            android:text="Predicted"
+                            android:textColor="#000000"
+                            android:layout_weight="1.7" />
+                    </TableRow> <!-- 0 end -->
+
+                    <TableRow android:layout_marginBottom="5dp"> <!-- 1 start -->
+                        <TextView
+                            android:id="@+id/tv_class_number"
+                            android:layout_width="0dp"
+                            android:gravity="center"
+                            android:text="1 / 2 / 3 / 4"
+                            android:textColor="#000000"
+                            android:layout_weight="3.3"/>
+                        <TextView
+                            android:gravity="center"
+                            android:text="Negative"
+                            android:textColor="#000000"
+                            android:layout_weight="0.8" />
+                        <TextView
+                            android:gravity="center"
+                            android:text="Positive"
+                            android:textColor="#000000"
+                            android:layout_weight="1.1" />
+                    </TableRow> <!-- 1 end -->
+
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_gravity="center"
+                            android:rotation="-90"
+                            android:text="Actual"
+                            android:textColor="#000000" />
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:shrinkColumns="*"
+                            android:stretchColumns="*"
+                            android:layout_span="5">
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="50dp"
+                                    android:layout_gravity="center|left"
+                                    android:text="Negative"
+                                    android:textColor="#000000" />
+                                <TextView
+                                    android:id="@+id/tv_tn"
+                                    android:layout_width="113dp"
+                                    android:layout_height="47dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/tv_confusion_matrix_blue"
+                                    android:text="TN\n( True Negative )"
+                                    android:fontFamily="casual"
+                                    android:textStyle="italic|bold"
+                                    android:textColor="#000000" />
+                                <TextView
+                                    android:id="@+id/tv_fp"
+                                    android:layout_width="113dp"
+                                    android:layout_height="47dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/tv_confusion_matrix_rose"
+                                    android:text="FP\n( False Positive )"
+                                    android:fontFamily="casual"
+                                    android:textStyle="italic|bold"
+                                    android:textColor="#000000" />
+                            </TableRow>
+
+                            <TableRow>
+                                <TextView
+                                    android:layout_width="50dp"
+                                    android:layout_gravity="center|left"
+                                    android:text="Positive"
+                                    android:textColor="#000000" />
+                                <TextView
+                                    android:id="@+id/tv_fn"
+                                    android:layout_width="113dp"
+                                    android:layout_height="47dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/tv_confusion_matrix_rose"
+                                    android:text="FN\n( False Negative )"
+                                    android:fontFamily="casual"
+                                    android:textStyle="italic|bold"
+                                    android:textColor="#000000" />
+                                <TextView
+                                    android:id="@+id/tv_tp"
+                                    android:layout_width="113dp"
+                                    android:layout_height="47dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/tv_confusion_matrix_blue"
+                                    android:text="TP\n( True Positive )"
+                                    android:fontFamily="casual"
+                                    android:textStyle="italic|bold"
+                                    android:textColor="#000000" />
+                            </TableRow>
+                        </TableLayout>
+                    </TableRow>
+
+<!--                    <TableRow> &lt;!&ndash; 2 start &ndash;&gt;-->
+<!--                        <TextView/>-->
+<!--                        <TextView-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:text="Negative"-->
+<!--                            android:textColor="#000000" />-->
+<!--                        <TextView-->
+<!--                            android:gravity="center"-->
+<!--                            android:background="@color/pc2_blue"-->
+<!--                            android:text="TN\n(True Negative)"-->
+<!--                            android:textColor="#000000" />-->
+<!--                        <TextView-->
+<!--                            android:gravity="center"-->
+<!--                            android:background="@color/pc1_rose"-->
+<!--                            android:text="FP\n(False Positive)"-->
+<!--                            android:textColor="#000000" />-->
+<!--                    </TableRow> &lt;!&ndash; 2 end &ndash;&gt;-->
+
+<!--                    <TableRow> &lt;!&ndash; 3 start &ndash;&gt;-->
+<!--                        <TextView/>-->
+<!--                        <TextView-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:text="Positive"-->
+<!--                            android:textColor="#000000" />-->
+<!--                        <TextView-->
+<!--                            android:gravity="center"-->
+<!--                            android:background="@color/pc1_rose"-->
+<!--                            android:text="FN\n(False Negative)"-->
+<!--                            android:textColor="#000000" />-->
+<!--                        <TextView-->
+<!--                            android:gravity="center"-->
+<!--                            android:background="@color/pc2_blue"-->
+<!--                            android:text="TP\n(True Positive)"-->
+<!--                            android:textColor="#000000" />-->
+<!--                    </TableRow> &lt;!&ndash; 3 end &ndash;&gt;-->
+                </TableLayout>
+
+                <View
+                    android:background="@color/gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.5"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="\u2022 Performance"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <View
+                    android:background="@color/gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.5"/>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:shrinkColumns="*"
+                    android:stretchColumns="*"
+                    android:alpha="0.5">
+
+                    <TableRow android:layout_marginBottom="5dp">
+                        <TextView
+                            android:gravity="center"
+                            android:text="Accuracy"
+                            android:fontFamily="monospace"
+                            android:textColor="#000000">
+                        </TextView>
+                        <TextView
+                            android:gravity="center"
+                            android:text="Precision"
+                            android:fontFamily="monospace"
+                            android:textColor="#000000">
+                        </TextView>
+                        <TextView
+                            android:gravity="center"
+                            android:text="Recall"
+                            android:fontFamily="monospace"
+                            android:textColor="#000000">
+                        </TextView>
+                        <TextView
+                            android:gravity="center"
+                            android:text="F1-score"
+                            android:fontFamily="monospace"
+                            android:textColor="#000000">
+                        </TextView>
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/tv_accuracy"
+                            android:gravity="center"
+                            android:text="-"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:textColor="#000000">
+                        </TextView>
+                        <TextView
+                            android:id="@+id/tv_precision"
+                            android:gravity="center"
+                            android:text="-"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:textColor="#000000">
+                        </TextView>
+                        <TextView
+                            android:id="@+id/tv_recall"
+                            android:gravity="center"
+                            android:text="-"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:textColor="#000000">
+                        </TextView>
+                        <TextView
+                            android:id="@+id/tv_f1_score"
+                            android:gravity="center"
+                            android:text="-"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:textColor="#000000">
+                        </TextView>
+                    </TableRow>
+                </TableLayout>
+
+                <View
+                    android:background="@color/gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.5"/>
+
+                <Button
+                    android:id="@+id/btn_kmeans_go"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:foreground="@drawable/kmeans_ripple"
+                    android:background="@drawable/btn_kmeans_step0"
+                    android:stateListAnimator="@null"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_k_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/btn_k2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_course_off"
+                        android:text="k = 2"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/gray_a80" />
+
+                    <Button
+                        android:id="@+id/btn_k3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_course_off"
+                        android:text="k = 3"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/gray_a80" />
+
+                    <Button
+                        android:id="@+id/btn_k4"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_course_off"
+                        android:text="k = 4"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/gray_a80" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+<!--            #### below is item 2222222222222222#################-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btn_ground_truth"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/spread" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ground Truth"
+                    android:textColor="@color/wolfpack_red"
+                    android:fontFamily="sans-serif"
+                    android:textSize="28sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <View
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:alpha="0.5" />
+
+            <LinearLayout
+                android:id="@+id/ll_ground_truth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.mikephil.charting.charts.ScatterChart
+                    android:id="@+id/scatterChart_ground_truth"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:lineSpacingMultiplier="1.05"
+                    android:text="@string/pca_pca"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+<!--            #### above is item 3333333333333333#################-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

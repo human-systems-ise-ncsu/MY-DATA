@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/pv_camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <edu.ncsu.ise.dsl.DrawSkeleton
+        android:id="@+id/skeleton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_camera_back"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/back_square"
+            android:foreground="@drawable/back_ripple"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="next"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btn_camera_next"
+            app:layout_constraintEnd_toStartOf="@+id/btn_camera_next" />
+
+        <Button
+            android:id="@+id/btn_camera_next"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/next_square"
+            android:foreground="@drawable/next_ripple"
+            android:alpha="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_walking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_action_on"
+            android:alpha="0.8"
+            android:text="Walking"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/wolfpack_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="80dp"/>
+
+        <Button
+            android:id="@+id/btn_eating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_action_off"
+            android:alpha="0.8"
+            android:text="Standing"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_walking"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/btn_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_action_off"
+            android:alpha="0.8"
+            android:text="Jumping\njack"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_eating"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/btn_dog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_action_off"
+            android:alpha="0.8"
+            android:text="Free\nmotion"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_photo"
+            android:layout_marginTop="20dp"/>
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_walk"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/btn_record"-->
+<!--            android:alpha="0.5"-->
+<!--            app:srcCompat="@drawable/walk" />-->
+
+        <Button
+            android:id="@+id/btn_record"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_record"
+            android:background="@drawable/record" />
+
+        <TextView
+            android:id="@+id/tv_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/btn_record"
+            app:layout_constraintBottom_toBottomOf="@id/btn_record"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="60sp" />
+
+        <TextView
+            android:id="@+id/tv_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="70dp"
+            android:text="start recording"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_tips"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"/>
+
+</FrameLayout>
